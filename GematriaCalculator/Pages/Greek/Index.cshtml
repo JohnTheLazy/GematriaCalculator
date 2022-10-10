@@ -1,0 +1,32 @@
+﻿@page
+@model GematriaCalculator.Pages.Greek.IndexModel
+@{
+    ViewData["Title"] = "Greek Words";
+}
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Number)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Lemma)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Xlit)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Pronounce)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Description)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Models.Greek item in Model.Greeks)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Lemma)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Xlit)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Pronounce)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
