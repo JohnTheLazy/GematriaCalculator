@@ -8,15 +8,16 @@
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Number)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Lemma)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Xlit)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Pronounce)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Greeks[0].Description)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.GreekIsopsephys[0].Number)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.GreekIsopsephys[0].Lemma)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.GreekIsopsephys[0].Xlit)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.GreekIsopsephys[0].Pronounce)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.GreekIsopsephys[0].Description)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.GreekIsopsephys[0].Standard)</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (Models.Greek item in Model.Greeks)
+                @foreach (var item in Model.GreekIsopsephys)
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Number)</td>
@@ -24,6 +25,7 @@
                         <td>@Html.DisplayFor(modelItem => item.Xlit)</td>
                         <td>@Html.DisplayFor(modelItem => item.Pronounce)</td>
                         <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Standard)</td>
                     </tr>
                 }
             </tbody>

@@ -1,24 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+﻿using GematriaCalculator.Data;
+using GematriaCalculator.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GematriaCalculator.Pages.Greek
 {
     public class IndexModel : PageModel
     {
-        private readonly GematriaCalculator.Data.StrongsDbContext _context;
+        public IList<GreekIsopsephy> GreekIsopsephys { get; set; } = default!;
 
-        public IndexModel(GematriaCalculator.Data.StrongsDbContext context)
+        public void OnGet()
         {
-            _context = context;
-        }
-
-        public IList<Models.Greek> Greeks { get; set; } = default!;
-
-        public async Task OnGetAsync()
-        {
-            if (_context.Greeks != null)
+            if (ApplicationData.Greeks != null && ApplicationData.Greeks.Any())
             {
-                Greeks = await _context.Greeks.ToListAsync();
+                GreekIsopsephys = ApplicationData.Greeks
+                .Select(x => new GreekIsopsephy()
+                {
+                    Xlit = x.Xlit,
+                    Description = x.Description,
+                    Lemma = x.Lemma,
+                    Number = x.Number,
+                    Pronounce = x.Pronounce
+                }).ToList();
             }
         }
     }
