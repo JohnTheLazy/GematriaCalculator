@@ -1,1 +1,1 @@
-Scaffold-DbContext -Connection "Data Source=E:\Projects\GematriaCalculator\GematriaCalculator\Data\strongs-sqlite3.db;" -Provider "Microsoft.EntityFrameworkCore.Sqlite" -OutputDir "Models" -force
+Scaffold-DbContext -Connection "Data Source=D:\Projects\GematriaCalculator\GematriaCalculator\Data\strongs-sqlite3.db;" -Provider "Microsoft.EntityFrameworkCore.Sqlite" -OutputDir "Models" -force

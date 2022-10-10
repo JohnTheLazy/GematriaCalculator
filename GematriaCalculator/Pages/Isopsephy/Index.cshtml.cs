@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using GematriaCalculator.Data;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using GematriaCalculator.Data;
-using GematriaCalculator.Models;
 
 namespace GematriaCalculator.Pages.Isopsephy
 {
     public class IndexModel : PageModel
     {
-        private readonly GematriaCalculator.Data.StrongsDbContext _context;
+        private readonly StrongsDbContext _context;
 
-        public IndexModel(GematriaCalculator.Data.StrongsDbContext context)
+        public IndexModel(StrongsDbContext context)
         {
             _context = context;
         }
@@ -25,7 +19,7 @@ namespace GematriaCalculator.Pages.Isopsephy
         {
             if (_context.Isopsephys != null)
             {
-                Isopsephys = await _context.Isopsephys.OrderBy(x => x.Value).ToListAsync();
+                Isopsephys = await _context.Isopsephys.OrderBy(x => x.Standard).ToListAsync();
             }
         }
     }
