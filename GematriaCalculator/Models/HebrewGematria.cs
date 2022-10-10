@@ -75,18 +75,71 @@ namespace GematriaCalculator.Models
         }
 
         //Atbash
+        public long ReverseStandard
+        {
+            get
+            {
+                long sum = 0;
+                foreach (char letter in Lemma)
+                {
+                    Gematria gematria = ApplicationData.Gematrias.FirstOrDefault(x => x.Letter.FirstOrDefault() == letter);
+                    if (gematria != null)
+                        sum += gematria.ReverseStandard;
+                }
+                return sum;
+            }
+        }
 
         //Avgad
 
         //Albam
 
         //Mispar HaKadmi
-        //Front
+        public long Sum
+        {
+            get
+            {
+                long sum = 0;
+                foreach (char letter in Lemma)
+                {
+                    Gematria gematria = ApplicationData.Gematrias.FirstOrDefault(x => x.Letter.FirstOrDefault() == letter);
+                    if (gematria != null)
+                        sum += gematria.Sum;
+                }
+                return sum;
+            }
+        }
 
         //Mispar HaPerati
-        //Square
+        public long Square
+        {
+            get
+            {
+                long sum = 0;
+                foreach (char letter in Lemma)
+                {
+                    Gematria gematria = ApplicationData.Gematrias.FirstOrDefault(x => x.Letter.FirstOrDefault() == letter);
+                    if (gematria != null)
+                        sum += gematria.Square;
+                }
+                return sum;
+            }
+        }
 
         //Mispar Shemi
-        //Name
+        public long Letters
+        {
+            get
+            {
+                long sum = 0;
+                foreach (char letter in Lemma)
+                {
+                    Gematria gematria = ApplicationData.Gematrias.FirstOrDefault(x => x.Letter.FirstOrDefault() == letter);
+                    if (gematria != null)
+                        sum += gematria.Letters;
+                }
+                return sum;
+            }
+        }
     }
 }
