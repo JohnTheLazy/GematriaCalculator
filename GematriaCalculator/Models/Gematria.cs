@@ -1,14 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace GematriaCalculator.Models
+﻿namespace GematriaCalculator.Models
 {
-    public partial class Gematria
+    public partial class Gematria : Cipher
     {
-        [Key]
-        public string Letter { get; set; } = null!;
-        public string Name { get; set; } = null!;
-        public string? Transliteration { get; set; }
-        public long Standard { get; set; }
         public long Large { get; set; }
         public long Small { get; set; }
         public long Ordinal { get; set; }

@@ -1,13 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace GematriaCalculator.Models
+﻿namespace GematriaCalculator.Models
 {
-    public partial class Isopsephy
+    public partial class Isopsephy : Cipher
     {
-        [Key]
-        public string Letter { get; set; } = null!;
-        public string Name { get; set; } = null!;
-        public string? Transliteration { get; set; }
-        public long Standard { get; set; }
     }
 }

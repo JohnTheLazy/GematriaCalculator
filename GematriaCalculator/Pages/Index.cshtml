@@ -1,13 +1,11 @@
 ﻿@page
-@using GematriaCalculator.Data
-@using GematriaCalculator.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Calculator";
 
-    List<Models.Gematria> gematrias = ApplicationData.Gematrias.ToList();
+    var ciphers = ApplicationData.Isopsephys.ToList().ConvertAll<Cipher>(x => x);
 }
-@await Html.PartialAsync("_Calculator.cshtml", gematrias)
+@await Html.PartialAsync("_Calculator.cshtml", ciphers)
 @section Scripts{
     <script>
         function getValue(item) {
@@ -40,7 +38,7 @@
 
             $("#q").keyup(function () {
                 let sum = 0;
-                let qText = $(this).val();
+                let qText = $(this).val().toUpperCase(); 
                 const stripped = qText.replace(/\s+/g, '')
                 if (stripped) {
                     for (var i = 0; i < stripped.length; i++) {

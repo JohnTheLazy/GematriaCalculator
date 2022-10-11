@@ -1,4 +1,4 @@
-﻿@model IList<Models.Gematria>
+﻿@model IList<Models.Cipher>
 @{
 
 }
@@ -9,7 +9,7 @@
                 <h2 class="fw-bold mb-0">Calculator</h2>
             </div>
             <div class="modal-body p-5 pt-0">
-                <form class="">
+                <form action="search">
                     <div class="form-floating mb-3">
                         <input type="hidden" id="sum" value="0" />
                         <input type="text" class="form-control rounded-3" id="q" name="q" />
@@ -23,7 +23,7 @@
                         @for (int i = 8; i >= 0; i--)
                         {
                             var item = Model[i];
-                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard">
+                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard" title="@item.Name">
                                 @item.Letter
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="z-index: 1;">
                                     @item.Standard
@@ -36,7 +36,7 @@
                         @for (int i = 17; i >= 9; i--)
                         {
                             var item = Model[i];
-                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard">
+                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard" title="@item.Name">
                                 @item.Letter
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="z-index: 1;">
                                     @item.Standard
@@ -49,7 +49,7 @@
                         @for (int i = 26; i >= 18; i--)
                         {
                             var item = Model[i];
-                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard">
+                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard" title="@item.Name">
                                 @item.Letter
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="z-index: 1;">
                                     @item.Standard
