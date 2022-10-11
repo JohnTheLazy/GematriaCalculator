@@ -1,0 +1,65 @@
+﻿@model IList<Models.Gematria>
+@{
+
+}
+<div class="modal position-static d-block py-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h2 class="fw-bold mb-0">Calculator</h2>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <form class="">
+                    <div class="form-floating mb-3">
+                        <input type="hidden" id="sum" value="0" />
+                        <input type="text" class="form-control rounded-3" id="q" name="q" />
+                        <label for="q">0</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-dark" type="submit">&#x1F50E</button>
+                    <h2 class="fs-5 fw-bold mb-3">Standard</h2>
+                </form>
+                <div class="d-grid">
+                    <div class="btn-group">
+                        @for (int i = 8; i >= 0; i--)
+                        {
+                            var item = Model[i];
+                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard">
+                                @item.Letter
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="z-index: 1;">
+                                    @item.Standard
+                                    <span class="visually-hidden">@item.Standard</span>
+                                </span>
+                            </button>
+                        }
+                    </div>
+                    <div class="btn-group">
+                        @for (int i = 17; i >= 9; i--)
+                        {
+                            var item = Model[i];
+                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard">
+                                @item.Letter
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="z-index: 1;">
+                                    @item.Standard
+                                    <span class="visually-hidden">@item.Standard</span>
+                                </span>
+                            </button>
+                        }
+                    </div>
+                    <div class="btn-group">
+                        @for (int i = 26; i >= 18; i--)
+                        {
+                            var item = Model[i];
+                            <button type="button" class="btn btn-outline-dark" name="@item.Letter" value="@item.Standard">
+                                @item.Letter
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="z-index: 1;">
+                                    @item.Standard
+                                    <span class="visually-hidden">@item.Standard</span>
+                                </span>
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

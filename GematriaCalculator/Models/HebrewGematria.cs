@@ -7,7 +7,7 @@ namespace GematriaCalculator.Models
     {
         public HebrewGematria()
         {
-          
+
         }
 
         [DisplayName("Mispar Hechrachi")]

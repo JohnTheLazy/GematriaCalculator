@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace GematriaCalculator.Models
+﻿namespace GematriaCalculator.Models
 {
     public partial class Strong
     {
